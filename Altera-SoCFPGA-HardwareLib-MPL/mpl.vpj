@@ -1,0 +1,265 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    Version="10.0"
+    VendorName="SlickEdit"
+    WorkingDir="."
+    VCSProject="Subversion:">
+    <Config
+        Name="Release"
+        OutputFile=""
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                MenuCaption="&amp;Compile"
+                SaveOption="SaveAll"
+                RunFromDir="%rw"
+                CaptureOutputWith="ProcessBuffer"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="scons -Q -s -D Obj/%n.o"/>
+            </Target>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveAll"
+                RunFromDir="%rw"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="scons -Q -s -D all"/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                MenuCaption="&amp;Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw"
+                ClearProcessBuffer="1">
+                <Exec CmdLine="scons -Q -s -D rebuild"/>
+            </Target>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveAll"
+                RunFromDir="%rw"
+                ClearProcessBuffer="1"
+                CaptureOutputWith="ProcessBuffer">
+                <Exec CmdLine="scons -Q -s -D load"/>
+            </Target>
+        </Menu>
+    </Config>
+    <Files>
+        <Folder
+            Name="Source Files"
+            Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl">
+            <F N="alt_config.h"/>
+            <F N="core/asm.h"/>
+            <F N="core/board_init.c"/>
+            <F N="core/board_init_a10.c"/>
+            <F N="core/crc32.c"/>
+            <F N="fatfs/diskio.h"/>
+            <F N="core/fat_load.c"/>
+            <F N="core/fat_load_fpga.c"/>
+            <F N="fatfs/ff.c"/>
+            <F N="fatfs/ff.h"/>
+            <F N="fatfs/ffconf.h"/>
+            <F N="core/altera_ip/freeze_controller.c"/>
+            <F N="core/altera_ip/freeze_controller.h"/>
+            <F N="core/header.c"/>
+            <F N="core/header.h"/>
+            <F N="fatfs/integer.h"/>
+            <F N="core/memory_init_a10.c"/>
+            <F N="core/mpl.c"/>
+            <F N="core/mpl_a10.c"/>
+            <F N="core/mpl_common.h"/>
+            <F N="mpl_config.h"/>
+            <F N="core/nand_load.c"/>
+            <F N="core/qspi_load.c"/>
+            <F N="core/qspi_load_a10.c"/>
+            <F N="core/altera_ip/scan_manager.c"/>
+            <F N="core/altera_ip/scan_manager.h"/>
+            <F N="core/sdmmc_common.h"/>
+            <F N="core/sdmmc_init.c"/>
+            <F N="core/sdmmc_load.c"/>
+            <F N="core/sdmmc_load_fpga.c"/>
+            <F N="core/altera_ip/sdram.c"/>
+            <F N="core/altera_ip/sdram.h"/>
+            <F N="core/altera_ip/sdram_phy.h"/>
+            <F N="core/semihost.c"/>
+            <F N="core/altera_ip/system_manager_pinmux.c"/>
+        </Folder>
+        <Folder
+            Name="handoff"
+            Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.inc;*.sh;*.cpy;*.if">
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/alt_types.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sdram_io.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer.c"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer_auto.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer_auto_ac_init.c"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer_auto_inst_init.c"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/sequencer_defines.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/system.h"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/tclrpt.c"/>
+            <F N="../hps_isw_handoff/slon1_soc_hps_0/tclrpt.h"/>
+        </Folder>
+        <Folder
+            Name="Scripts"
+            Filters="">
+            <F
+                N="config.mk"
+                Type="Makefile"/>
+            <F
+                N="Makefile"
+                Type="Makefile"/>
+        </Folder>
+        <Folder
+            Name="HWLib"
+            Filters="">
+            <Folder
+                Name="Headers"
+                Filters="">
+                <Folder
+                    Name="SoC CV/AV"
+                    Filters="">
+                    <Folder
+                        Name="socal"
+                        Filters="">
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_acpidmap.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_can.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_clkmgr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_dap.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_dmanonsecure.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_dmasecure.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_emac.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_f2h.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_fpgamgrdata.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_fpgamgr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_gpio.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_h2f.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_i2c.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_l3.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_l4wd.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_lwfpgaslvs.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_lwh2f.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_mpul2.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_mpuscu.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_nanddata.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_nand.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_ocram.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_qspidata.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_qspi.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_rom.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_rstmgr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_scanmgr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_sdmmc.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_sdr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_spim.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_spis.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_stm.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_sysmgr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_tmr.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_uart.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/alt_usb.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/hps.h"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/socal/socal.h"/>
+                    </Folder>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_bridge_manager.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_clock_group.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_clock_manager.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_config.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_dma_periph.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_ecc.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_fpga_manager.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_int_device.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_reset_manager.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_sdram.h"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/soc_cv_av/alt_system_manager.h"/>
+                </Folder>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_16550_uart.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_address_space.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_cache.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_can.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_can_private.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_dma.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_dma_common.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_dma_program.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_generalpurpose_io.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_globaltmr.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_i2c.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_interrupt.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_interrupt_common.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_l2_p310.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_mmu.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_mpu_registers.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_nand.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_printf.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_qspi.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_sdmmc.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_spi.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_timers.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/alt_watchdog.h"/>
+                <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/include/hwlib.h"/>
+            </Folder>
+            <Folder
+                Name="Sources"
+                Filters="">
+                <Folder
+                    Name="utils"
+                    Filters="">
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/utils/alt_p2uart.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/utils/alt_printf.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/utils/alt_retarget_gnu.c"/>
+                </Folder>
+                <Folder
+                    Name="hwmgr"
+                    Filters="">
+                    <Folder
+                        Name="SoC CV AV"
+                        Filters="">
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_bridge_manager.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_clock_manager.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_clock_manager_init.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_ecc.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_fpga_manager.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_reset_manager.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_sdram.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_system_manager.c"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_bridge_f2s_armcc.s"/>
+                        <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/soc_cv_av/alt_bridge_f2s_gnu.s"/>
+                    </Folder>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_16550_uart.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_address_space.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_cache.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_can.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_dma.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_dma_program.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_generalpurpose_io.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_globaltmr.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_i2c.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_interrupt.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_mmu.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_nand.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_qspi.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_sdmmc.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_spi.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_timers.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_watchdog.c"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_interrupt_armcc.s"/>
+                    <F N="/opt/cad/altera/16.1/embedded/ip/altera/hps/altera_hps/hwlib/src/hwmgr/alt_interrupt_armclang.s"/>
+                </Folder>
+            </Folder>
+        </Folder>
+        <Folder
+            Name="bsp"
+            Filters="">
+            <F N="../software/spl_bsp/generated/build.h"/>
+            <F N="../software/spl_bsp/generated/iocsr_config_cyclone5.c"/>
+            <F N="../software/spl_bsp/generated/iocsr_config_cyclone5.h"/>
+            <F N="../software/spl_bsp/generated/pinmux_config.h"/>
+            <F N="../software/spl_bsp/generated/pinmux_config_cyclone5.c"/>
+            <F N="../software/spl_bsp/generated/pll_config.h"/>
+            <F N="../software/spl_bsp/generated/reset_config.h"/>
+            <F N="../software/spl_bsp/generated/sdram/sdram_config.h"/>
+        </Folder>
+    </Files>
+</Project>

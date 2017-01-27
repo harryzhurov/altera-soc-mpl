@@ -1,0 +1,13 @@
+db
+incremental_db
+output_files
+slon1_soc
+hps_isw_handoff
+software
+c5_pin_model_dump.txt
+Altera-SoCFPGA-HardwareLib-MPL/bin
+*.axf
+*.bin
+*.o
+*.vpwhistu
+*.vtg
